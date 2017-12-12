@@ -5,28 +5,30 @@
    
     HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
     DownloadView.prototype.template = Handlebars.compile($("#download-tpl").html());
-    SearchTitleView.prototype.template = Handlebars.compile($("#search-title-tpl").html());
-    EmployeeListView.prototype.template = Handlebars.compile($("#employee-list-tpl").html());
-    EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
-    var service = new EmployeeService();
+    //SearchTitleView.prototype.template = Handlebars.compile($("#search-title-tpl").html());
+   // EmployeeListView.prototype.template = Handlebars.compile($("#employee-list-tpl").html());
+    //EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
+    var service = new Services();
+    var num = 0;
+    var localStorage = window.localStorage;
     
    service.initialize().done(function () {
         router.addRoute('', function () {
-            $('body').html(new HomeView(service).render().$el);
+            $('body').html(new HomeView(service, num, localStorage).render().$el);
             
         });
        router.addRoute('', function () {
-            $('body').html(new DownloadView(service).render().$el);
+            $('body').html(new DownloadView(service, num, localStorage).render().$el);
        });
-       router.addRoute('', function () {
-           $('body').html(new SearchView(service).render().$el);
+       /*router.addRoute('', function () {
+           $('body').html(new SearchView(service, num, localStorage).render().$el);
        });
         router.addRoute('employees/:id', function (id) {
-            service.findById(parseInt(id)).done(function (employee) {
-                $('body').html(new ImageView(employee).render().$el);
+            service.findById(parseInt(id)).done(function (picture) {
+                $('body').html(new ImageView(picture).render().$el);
               
             });
-        });
+        });*/
         router.start();
     });
 

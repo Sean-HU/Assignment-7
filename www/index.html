@@ -9,29 +9,29 @@
 
 <body>
     <script id="home-tpl" type="text/template">
-   <a href="#" class="search-name-btn">     
+   <a href="#" class="download-btn">     
         <div class="media-body">
             <button type="button">Download</button>
         </div>
     </a>
-        <a href="#" class="search-title-btn">     
+        <a href="#" class="search-btn">     
         <div class="media-body">
             <button type="button">Search</button>
         </div>
     </a>
     </script>
-    <script id="search-name-tpl" type="text/template">
-        <header class="bar bar-nav">
-        <h1 class="title">Directory</h1>
-        </header>
-        <div class="bar bar-standard bar-header-secondary">
-            <input class='search-first' type="search" placeholder="Enter first name"/> 
-               <input class='search-last' type="search" placeholder="Enter last name"/>
-            
+    <script id="download-tpl" type="text/template">
+     
+       <div class="media-body">
+            <input class='input-tag' type="search" placeholder="Enter Tags"/> 
+              <input class='input-url' type="search" placeholder="Enter URL"/>
         </div>
-         
-        <div class="content"></div>
-    </script>
+         <a href="#" class="download-pic-btn">
+            <div class="media-body">
+                <button type="button">Download</button>
+            </div>
+        </a>
+  </script>
      <script id="search-title-tpl" type="text/template">
         <header class="bar bar-nav">
         <h1 class="title">Directory</h1>
@@ -124,15 +124,17 @@
           </div>
       </div>
   </script>
-   
+ 
+<script src="js/DownloadView.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="lib/handlebars.js"></script>
 <script src="cordova.js"></script>
 <script src="lib/jquery.js"></script>
 <script src="lib/router.js"></script>
-<script src="js/services/memory/EmployeeService.js"></script>
-<script src="js/EmployeeView.js"></script>
-<script src="js/app.js"></script>
+<script src="js/Services.js"></script>
+  <script src="js/app.js"></script>  
+
+
  <script src="js/index.js"></script>
 </body>
 </html>
