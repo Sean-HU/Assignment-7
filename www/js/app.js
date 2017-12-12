@@ -4,7 +4,7 @@
     /* ---------------------------------- Local Variables ---------------------------------- */
    
     HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
-    SearchNameView.prototype.template = Handlebars.compile($("#search-name-tpl").html());
+    DownloadView.prototype.template = Handlebars.compile($("#download-tpl").html());
     SearchTitleView.prototype.template = Handlebars.compile($("#search-title-tpl").html());
     EmployeeListView.prototype.template = Handlebars.compile($("#employee-list-tpl").html());
     EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
@@ -16,14 +16,14 @@
             
         });
        router.addRoute('', function () {
-            $('body').html(new SearchNameView(service).render().$el);
+            $('body').html(new DownloadView(service).render().$el);
        });
        router.addRoute('', function () {
-           $('body').html(new SearchTitleView(service).render().$el);
+           $('body').html(new SearchView(service).render().$el);
        });
         router.addRoute('employees/:id', function (id) {
             service.findById(parseInt(id)).done(function (employee) {
-                $('body').html(new EmployeeView(employee).render().$el);
+                $('body').html(new ImageView(employee).render().$el);
               
             });
         });
