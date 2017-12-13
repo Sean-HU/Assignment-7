@@ -27,10 +27,7 @@
                 <button type="button">Back To Home </button>
             </div>
         </a>
-        <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+       
        <div class="media-body">
             <input class='input-tag' type="search" placeholder="Enter Tags"/> 
               <input class='input-url' type="search" placeholder="Enter URL"/>
@@ -51,15 +48,15 @@
          
         <div class="content"></div>
     </script>
-    <script id="employee-list-tpl" type="text/template">
+    <script id="image-list-tpl" type="text/template">
     <ul class="table-view">
         {{#each this}}
         <li class="table-view-cell media">
-            <a href="#employees/{{ id }}">
-                <img class="media-object pull-left" src="assets/pics/{{pic}}">
+            <a href="#pictures/{{ id }}">
+                <img class="media-object pull-left" src="{{file}}">
                 <div class="media-body">
-                    {{firstName}} {{lastName}}
-                    <p>{{title}} ~ {{department}}</p>
+                    {{file}} 
+                    <p>{{tags}}</p>
                 </div>
             </a>
         </li>
@@ -131,11 +128,13 @@
           </div>
       </div>
   </script>
- <script src="js/index.js"></script>
+ <script src="cordova.js"></script>
+<script src="js/ImageListView.js"></script>
+<script src="js/SearchView.js"></script>
 <script src="js/DownloadView.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="lib/handlebars.js"></script>
-<script src="cordova.js"></script>
+
 <script src="lib/jquery.js"></script>
 <script src="lib/router.js"></script>
 <script src="js/Services.js"></script>

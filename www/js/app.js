@@ -6,7 +6,7 @@
     HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
     DownloadView.prototype.template = Handlebars.compile($("#download-tpl").html());
     SearchView.prototype.template = Handlebars.compile($("#search-tpl").html());
-   // EmployeeListView.prototype.template = Handlebars.compile($("#employee-list-tpl").html());
+    ImageListView.prototype.template = Handlebars.compile($("#image-list-tpl").html());
     //EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
     var service = new Services();
     var num = 0;
@@ -20,15 +20,15 @@
        router.addRoute('', function () {
             $('body').html(new DownloadView(service, num, localStorage).render().$el);
        });
-       /*router.addRoute('', function () {
+       router.addRoute('', function () {
            $('body').html(new SearchView(service, num, localStorage).render().$el);
        });
-        router.addRoute('employees/:id', function (id) {
+        router.addRoute('pictures/:id', function (id) {
             service.findById(parseInt(id)).done(function (picture) {
                 $('body').html(new ImageView(picture).render().$el);
               
             });
-        });*/
+        });
         router.start();
     });
 

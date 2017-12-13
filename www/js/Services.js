@@ -17,32 +17,29 @@ var Services = function() {
                 break;
             }
         }
-        deferred.resolve(employee);
+        deferred.resolve(picture);
         return deferred.promise();
     }
-    /*
-    this.findByName = function(searchFirst, searchLast) {
+    
+    this.findByTag = function (searchImage) {
         var deferred = $.Deferred();
-        var results = employees.filter(function(element) {
-            var first = element.firstName;
-            var last = element.lastName;
-            return (first.toLowerCase().indexOf(searchFirst.toLowerCase()) > -1) && (last.toLowerCase().indexOf(searchLast.toLowerCase()) > -1);
+        var results = pictures.filter(function (element) {
+            var tag = element.tags;
+            return (tag.toLowerCase().indexOf(searchImage.toLowerCase()) > -1);
         });
         deferred.resolve(results);
+        return deferred.promise();
+    }
+    
+    var pictures = [];
+
+    this.append = function(num, tag, fileName){
+        var deferred = $.Deferred();
+        pictures.push({id: num, tags: tag, file: fileName});
+        deferred.resolve(pictures);
         return deferred.promise();
     }
 
-    this.findByTitle = function (searchDepartment, searchTitle) {
-        var deferred = $.Deferred();
-        var results = employees.filter(function (element) {
-            var first = element.department;
-            var last = element.title;
-            return (first.toLowerCase().indexOf(searchDepartment.toLowerCase()) > -1) && (last.toLowerCase().indexOf(searchTitle.toLowerCase()) > -1);
-        });
-        deferred.resolve(results);
-        return deferred.promise();
-    }
-    */
-    var pictures = [];
+
 
 }

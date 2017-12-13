@@ -1,11 +1,11 @@
 var ImageListView = function () {
     var pictures;
     this.render = function () {
-        this.$el.html(this.template(employees));
+        this.$el.html(this.template(pictures));
         return this;
     };
-    this.setEmployees = function (list) {
-        employees = list;
+    this.setPictures = function (list) {
+        pictures = list;
         this.render();
     }
     this.initialize = function () {

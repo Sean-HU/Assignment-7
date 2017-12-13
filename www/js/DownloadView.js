@@ -19,12 +19,13 @@ var DownloadView = function (service, num, localStorage) {
     function downloadFile() {
         var fileTransfer = new FileTransfer();
         var uri = encodeURI($('.input-url').val().trim());
-        var fileURL = cordova.file.cacheDirectory + $('.input-tags').val().trim(); // where to save
+        var fileURL = cordova.file.cacheDirectory + ($('.input-tag').val().trim()); // where to save
         fileTransfer.download(uri, fileURL, function (entry) {
             console.log("download complete: " + entry.toURL());
             alert("Download Complete");
             num = num + 1;
-            pictures.push({ id: num, tags: $('.input-tags').val().trim(), file: fileURL });
+            //pictures.push({ id: num, tags: $('.input-tag').val().trim(), file: fileURL });
+            service.append(num, $('.input-tag').val().trim(), fileURL);
             setLocalStorage(fileURL);
         },
         function (error) {
