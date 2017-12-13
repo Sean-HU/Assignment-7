@@ -13,11 +13,9 @@ var HomeView = function (service, num, localStorage) {
         return this;
     };
     this.downloadFunc = function (event) {
-        //searchNameView.render();
         $('body').html(new DownloadView(service, num, localStorage).render().$el);
     };
    this.searchFunc = function (event) {
-        //searchNameView.render();
         $('body').html(new SearchView(service, num, localStorage).render().$el);
     };
     this.initialize();

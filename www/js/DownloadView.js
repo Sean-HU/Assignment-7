@@ -3,16 +3,12 @@ var DownloadView = function (service, num, localStorage) {
         this.$el = $('<div/>');
         this.$el.on('click', '.back-btn', this.backFunc);
         this.$el.on('click', '.download-pic-btn', downloadFile);
-       /* this.$el.on('keyup', '.input-tags', findByName);
-        this.$el.on('keyup', '.input-url', findByName);*/
-        
     };
     this.render = function () {
         this.$el.html(this.template());
         return this;
     };
     this.backFunc = function (event) {
-        //searchNameView.render();
         $('body').html(new HomeView(service, num, localStorage).render().$el);
     };
     this.initialize();
@@ -26,7 +22,6 @@ var DownloadView = function (service, num, localStorage) {
             console.log("download complete: " + entry.toURL());
             alert("Download Complete");
             num = num + 1;
-            //pictures.push({ id: num, tags: $('.input-tag').val().trim(), file: fileURL });
             service.append(num, $('.input-tag').val().trim(), file_name, fileURL);
             setLocalStorage($('.input-tag').val().trim(), fileURL);
         },
@@ -45,7 +40,5 @@ var DownloadView = function (service, num, localStorage) {
     }
     function setLocalStorage(tags, fileURL) { // adding data to local storage.
         localStorage.setItem(tags, fileURL);
-        //localStorage.setItem("file", fileURL);
-        
     }
 }
