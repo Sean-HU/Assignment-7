@@ -3,20 +3,20 @@ var SearchView = function (service, num, localStorage) {
     this.initialize = function () {
         // Define a div wrapper for the view (used to attach events)
         this.$el = $('<div/>');
-        this.$el.on('click', '.back-btn', this.backFunc);
+        this.$el.on('click', '.back-bttn', this.backFunct);
         this.$el.on('keyup', '.search-image', findByTag);
         imageListView = new ImageListView();
     };
-    this.initialize();
+   
     this.render = function () {
         this.$el.html(this.template());
         $('.content', this.$el).html(imageListView.$el);
         return this;
     };
-    this.backFunc = function (event) {
-        //searchNameView.render();
+    this.backFunct = function (event) {
         $('body').html(new HomeView(service, num, localStorage).render().$el);
     };
+    this.initialize();
     function findByTag() {
         var trimmed_tag = $('.search-image').val().trim();
         

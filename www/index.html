@@ -10,6 +10,7 @@
 
 <body>
     <script id="home-tpl" type="text/template">
+        <h1>Home</h1>
    <a href="#" class="download-btn">     
         <div class="media-body">
             <button type="button">Download</button>
@@ -22,14 +23,15 @@
     </a>
     </script>
     <script id="download-tpl" type="text/template">
+        <h1>Download</h1>
      <a href="#" class="back-btn">
             <div class="media-body">
                 <button type="button">Back To Home </button>
             </div>
         </a>
-       
+        
        <div class="media-body">
-            <input class='input-tag' type="search" placeholder="Enter Tags"/> 
+            <input class='input-tag' type="search" placeholder="Enter Tag(s)"/> 
               <input class='input-url' type="search" placeholder="Enter URL"/>
         </div>
          <a href="#" class="download-pic-btn">
@@ -39,19 +41,15 @@
         </a>
   </script>
      <script id="search-tpl" type="text/template">
-        <header class="bar bar-nav">
-        <h1 class="title">Search</h1>
-        </header>
-         <a href="#" class="back-btn">
-            <div class="media-body">
-                <button type="button">Back To Home </button>
-            </div>
-        </a>
-       
-        <div class="bar bar-standard bar-header-secondary">
+         <header class="bar bar-nav">
+          <h1 class="title">Search</h1>
+      </header>
+      <div class="bar bar-standard bar-header-secondary">
             <input class='search-image' type="search" placeholder="Enter Tag(s)"/> 
-        </div>
-         
+          <a href="#" class="back-bttn">
+                <button type="button">Back To Home </button>
+        </a>
+        </div> 
         <div class="content"></div>
     </script>
     <script id="image-list-tpl" type="text/template">
@@ -61,8 +59,8 @@
             <a href="#pictures/{{ id }}">
                 <img class="media-object pull-left" src="{{pic}}">
                 <div class="media-body">
-                    {{file}} 
-                    <p>{{tags}}</p>
+                    File Name: {{file}} 
+                    <p>Tag(s): {{tags}}</p>
                 </div>
             </a>
         </li>
@@ -82,9 +80,9 @@
                           
                               
          <div class="media-body">
-            {{ file }}
-                              <p>{{ tags }}</p>
-                          </div>
+           File Name: {{ file }}
+                <p>Tag(s): {{ tags }}</p>
+            </div>
              
           </div>
       </div>
