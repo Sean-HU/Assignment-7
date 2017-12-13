@@ -7,7 +7,7 @@
     DownloadView.prototype.template = Handlebars.compile($("#download-tpl").html());
     SearchView.prototype.template = Handlebars.compile($("#search-tpl").html());
     ImageListView.prototype.template = Handlebars.compile($("#image-list-tpl").html());
-    //EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
+    ImageView.prototype.template = Handlebars.compile($("#image-tpl").html());
     var service = new Services();
     var num = 0;
     var localStorage = window.localStorage;

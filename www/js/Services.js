@@ -33,9 +33,9 @@ var Services = function() {
     
     var pictures = [];
 
-    this.append = function(num, tag, fileName){
+    this.append = function(num, tag, fileName, url){
         var deferred = $.Deferred();
-        pictures.push({id: num, tags: tag, file: fileName});
+        pictures.push({id: num, tags: tag, file: fileName, pic: url});
         deferred.resolve(pictures);
         return deferred.promise();
     }

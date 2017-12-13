@@ -17,16 +17,18 @@ var DownloadView = function (service, num, localStorage) {
     };
     this.initialize();
     function downloadFile() {
+        var file_name;
         var fileTransfer = new FileTransfer();
         var uri = encodeURI($('.input-url').val().trim());
-        var fileURL = cordova.file.cacheDirectory + ($('.input-tag').val().trim()); // where to save
+        file_name = uri.substring(uri.lastIndexOf('/') + 1);
+        var fileURL = cordova.file.cacheDirectory + file_name; // where to save
         fileTransfer.download(uri, fileURL, function (entry) {
             console.log("download complete: " + entry.toURL());
             alert("Download Complete");
             num = num + 1;
             //pictures.push({ id: num, tags: $('.input-tag').val().trim(), file: fileURL });
-            service.append(num, $('.input-tag').val().trim(), fileURL);
-            setLocalStorage(fileURL);
+            service.append(num, $('.input-tag').val().trim(), file_name, fileURL);
+            setLocalStorage($('.input-tag').val().trim(), fileURL);
         },
         function (error) {
             console.log("download error source " + error.source);
@@ -41,8 +43,8 @@ var DownloadView = function (service, num, localStorage) {
         }
         );
     }
-    function setLocalStorage(fileURL) { // adding data to local storage.
-        localStorage.setItem($('.input-tags').val().trim() + ";" + fileURL, fileURL);
+    function setLocalStorage(tags, fileURL) { // adding data to local storage.
+        localStorage.setItem(tags, fileURL);
         //localStorage.setItem("file", fileURL);
         
     }
