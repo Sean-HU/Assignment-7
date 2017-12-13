@@ -5,7 +5,7 @@
    
     HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
     DownloadView.prototype.template = Handlebars.compile($("#download-tpl").html());
-    //SearchTitleView.prototype.template = Handlebars.compile($("#search-title-tpl").html());
+    SearchView.prototype.template = Handlebars.compile($("#search-tpl").html());
    // EmployeeListView.prototype.template = Handlebars.compile($("#employee-list-tpl").html());
     //EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
     var service = new Services();

@@ -4,7 +4,7 @@ var HomeView = function (service, num, localStorage) {
     this.initialize = function () {
         this.$el = $('<div/>');
         this.$el.on('click', '.download-btn', this.downloadFunc);
-        //this.$el.on('click', '.search-btn', this.searchFunc);
+        this.$el.on('click', '.search-btn', this.searchFunc);
         downloadView = new DownloadView;
         //searchView = new SearchView;
     };
@@ -16,9 +16,9 @@ var HomeView = function (service, num, localStorage) {
         //searchNameView.render();
         $('body').html(new DownloadView(service, num, localStorage).render().$el);
     };
-   /* this.searchTitle = function (event) {
+   this.searchFunc = function (event) {
         //searchNameView.render();
         $('body').html(new SearchView(service, num, localStorage).render().$el);
-    };*/
+    };
     this.initialize();
 }

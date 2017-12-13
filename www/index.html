@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link href="assets/ratchet/css/ratchet.css" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
 <body>
@@ -21,7 +22,15 @@
     </a>
     </script>
     <script id="download-tpl" type="text/template">
-     
+     <a href="#" class="back-btn">
+            <div class="media-body">
+                <button type="button">Back To Home </button>
+            </div>
+        </a>
+        <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
        <div class="media-body">
             <input class='input-tag' type="search" placeholder="Enter Tags"/> 
               <input class='input-url' type="search" placeholder="Enter URL"/>
@@ -32,14 +41,12 @@
             </div>
         </a>
   </script>
-     <script id="search-title-tpl" type="text/template">
+     <script id="search-tpl" type="text/template">
         <header class="bar bar-nav">
         <h1 class="title">Directory</h1>
         </header>
         <div class="bar bar-standard bar-header-secondary">
-            <input class='search-department' type="search" placeholder="Enter Department"/> 
-               <input class='search-title' type="search" placeholder="Enter Title"/>
-            
+            <input class='search-image' type="search" placeholder="Enter Tag(s)"/> 
         </div>
          
         <div class="content"></div>
@@ -124,7 +131,7 @@
           </div>
       </div>
   </script>
- 
+ <script src="js/index.js"></script>
 <script src="js/DownloadView.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="lib/handlebars.js"></script>
@@ -135,7 +142,7 @@
   <script src="js/app.js"></script>  
 
 
- <script src="js/index.js"></script>
+ 
 </body>
 </html>
        
